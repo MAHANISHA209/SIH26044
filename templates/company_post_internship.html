@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Post Internship</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Post Internship</h1>
+
+    <form method="POST">
+
+        <input type="text"
+               name="title"
+               placeholder="Internship Title"
+               required>
+
+        <textarea
+            name="description"
+            placeholder="Internship Description"
+            required></textarea>
+
+        <input type="text"
+               name="required_skills"
+               placeholder="Required Skills (Java, Python, SQL)"
+               required>
+
+        <input type="text"
+               name="location"
+               placeholder="Location">
+
+        <input type="text"
+               name="duration"
+               placeholder="Duration (e.g. 3 Months)">
+
+        <input type="text"
+               name="stipend"
+               placeholder="Stipend">
+
+        <button type="submit">
+            Post Internship
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/company/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

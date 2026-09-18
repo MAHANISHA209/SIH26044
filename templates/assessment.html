@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Skill Assessment</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Skill Assessment</h1>
+
+    <p>Enter your skill and assessment score.</p>
+
+    <form method="POST">
+
+        <input type="text"
+               name="skill"
+               placeholder="Enter skill (e.g. Java)"
+               required>
+
+        <input type="number"
+               name="score"
+               placeholder="Score (0-10)"
+               min="0"
+               max="10"
+               required>
+
+        <button type="submit">
+            Submit Assessment
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

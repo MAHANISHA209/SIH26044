@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Company Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Welcome, {{ name }}!</h1>
+
+    <h2>Company Dashboard</h2>
+
+    <div class="card">
+
+        <h3>Post Internship</h3>
+
+        <p>
+            Post internship opportunities for students.
+        </p>
+            <a href="/company/post-internship">
+            <button>Post Internship</button>
+            </a>
+
+    </div>
+
+    <div class="card">
+    <h3>Post Job</h3>
+    <p>Post placement opportunities based on skills.</p>
+
+    <a href="/company/post-job">
+        <button>Post Job</button>
+    </a>
+    </div>
+
+    <div class="card">
+
+    <h3>Student Applications</h3>
+
+    <p>
+        View students who applied for your internships.
+    </p>
+
+    <a href="/company/applications">
+        <button>View Applications</button>
+    </a>
+
+    </div>
+
+    <a href="/company/logout">
+        <button>Logout</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

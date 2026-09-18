@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Skill Gap Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Skill Gap Analysis</h1>
+
+    {% if assessments %}
+
+        {% for assessment in assessments %}
+
+        <div class="card">
+
+            <h2>{{ assessment.skill }}</h2>
+
+            <p>
+                <strong>Score:</strong>
+                {{ assessment.score }}/10
+            </p>
+
+            <p>
+                <strong>Current Level:</strong>
+                {{ assessment.level }}
+            </p>
+
+            {% if assessment.score < 5 %}
+
+                <p>
+                    <strong>Skill Gap:</strong>
+                    High
+                </p>
+
+                <p>
+                    Recommended: Practice {{ assessment.skill }}
+                    regularly.
+                </p>
+
+            {% elif assessment.score < 8 %}
+
+                <p>
+                    <strong>Skill Gap:</strong>
+                    Medium
+                </p>
+
+                <p>
+                    Recommended: Improve your {{ assessment.skill }}
+                    skills with projects.
+                </p>
+
+            {% else %}
+
+                <p>
+                    <strong>Skill Gap:</strong>
+                    Low
+                </p>
+
+                <p>
+                    You have a good level in {{ assessment.skill }}.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            No assessment data available.
+        </p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

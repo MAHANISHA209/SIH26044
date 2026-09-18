@@ -1,0 +1,98 @@
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}"
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Welcome, {{ name }}!</h1>
+
+    <h2>Student Dashboard</h2>
+
+    <div class="card">
+    <h3>My Profile</h3>
+    <p>Manage your skills, projects and certificates.</p>
+
+    <a href="/profile">
+        <button>Open Profile</button>
+    </a>
+    </div>
+
+    <div class="card">
+
+    <h3>Skill Assessment</h3>
+
+    <p>
+        Check your current skill level.
+    </p>
+
+    <a href="/assessment">
+        <button>Take Assessment</button>
+    </a>
+
+</div>
+   <div class="card">
+
+    <h3>Internships</h3>
+
+    <p>Find suitable internship opportunities.</p>
+
+    <a href="/internships">
+        <button>View Internships</button>
+    </a>
+
+</div>
+<div class="card">
+    <h3>Skill Gap Analysis</h3>
+    <p>Identify skills that need improvement.</p>
+
+    <a href="/skill-gap">
+        <button>View Skill Gap</button>
+    </a>
+</div>
+<div class="card">
+    <h3>Learning Recommendations</h3>
+    <p>Get recommended learning based on your skills.</p>
+
+    <a href="/recommendations">
+        <button>View Recommendations</button>
+    </a>
+</div>
+<div class="card">
+    <h3>Internship Matching</h3>
+    <p>Find internships based on your skills.</p>
+
+    <a href="/matching">
+        <button>Find Matching Internships</button>
+    </a>
+</div>
+<div class="card">
+    <h3>Placement Jobs</h3>
+    <p>View job opportunities posted by companies.</p>
+
+    <a href="/jobs">
+        <button>View Jobs</button>
+    </a>
+</div>
+
+    <div class="card">
+        <h3>Placement</h3>
+        <p>Find placement opportunities based on your skills.</p>
+    </div>
+
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+
+</div>
+
+</body>
+</html>

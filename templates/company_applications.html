@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Applications</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Applications</h1>
+
+    {% if applications %}
+
+        {% for application in applications %}
+
+        <div class="card">
+
+            <h2>{{ application.student_name }}</h2>
+
+            <p>
+                <strong>Email:</strong>
+                {{ application.email }}
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                {{ application.skills }}
+            </p>
+
+            <p>
+                <strong>Internship:</strong>
+                {{ application.title }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ application.status }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No applications received yet.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/company/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

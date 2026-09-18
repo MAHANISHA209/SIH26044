@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Post Job</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Post Job</h1>
+
+    <form method="POST">
+
+        <input type="text"
+               name="title"
+               placeholder="Job Title"
+               required>
+
+        <textarea
+            name="description"
+            placeholder="Job Description"
+            required></textarea>
+
+        <input type="text"
+               name="required_skills"
+               placeholder="Required Skills (Python, Java, SQL)"
+               required>
+
+        <input type="text"
+               name="location"
+               placeholder="Location">
+
+        <input type="text"
+               name="salary"
+               placeholder="Salary">
+
+        <button type="submit">
+            Post Job
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/company/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

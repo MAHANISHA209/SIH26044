@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Available Internships</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Available Internships</h1>
+
+    {% if internships %}
+
+        {% for internship in internships %}
+
+        <div class="card">
+
+            <h2>{{ internship.title }}</h2>
+
+            <p>
+                <strong>Company:</strong>
+                {{ internship.company_name }}
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                {{ internship.description }}
+            </p>
+
+            <p>
+                <strong>Required Skills:</strong>
+                {{ internship.required_skills }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                {{ internship.location }}
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                {{ internship.duration }}
+            </p>
+
+            <p>
+                <strong>Stipend:</strong>
+                {{ internship.stipend }}
+            </p>
+
+            <a href="/apply/{{ internship.id }}">
+            <button>Apply</button>
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No internships available.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

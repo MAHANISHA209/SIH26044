@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Internship Matching</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Internship Matching</h1>
+
+    <p>Internships matched with your skills.</p>
+
+    {% if internships %}
+
+        {% for internship in internships %}
+
+        <div class="card">
+
+            <h2>{{ internship.title }}</h2>
+
+            <p>
+                <strong>Company:</strong>
+                {{ internship.company_name }}
+            </p>
+
+            <p>
+                <strong>Required Skills:</strong>
+                {{ internship.required_skills }}
+            </p>
+
+            <p>
+                <strong>Your Matching Skills:</strong>
+                {{ internship.matching_skills }}
+            </p>
+
+            <p>
+                <strong>Match Score:</strong>
+                {{ internship.match_score }}%
+            </p>
+
+            <a href="/apply/{{ internship.id }}">
+                <button>Apply</button>
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No matching internships found.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

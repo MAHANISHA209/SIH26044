@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learning Recommendations</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Learning Recommendations</h1>
+
+    <p>Recommended learning based on your skill gaps.</p>
+
+    {% if recommendations %}
+
+        {% for recommendation in recommendations %}
+
+        <div class="card">
+
+            <h2>{{ recommendation.skill }}</h2>
+
+            <p>
+                <strong>Current Score:</strong>
+                {{ recommendation.score }}/10
+            </p>
+
+            <p>
+                <strong>Level:</strong>
+                {{ recommendation.level }}
+            </p>
+
+            <p>
+                <strong>Recommendation:</strong>
+                {{ recommendation.recommendation }}
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No recommendations available.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        <button>Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>
